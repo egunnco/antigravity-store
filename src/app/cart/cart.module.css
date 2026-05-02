@@ -1,0 +1,167 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+}
+
+.topNav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  z-index: 999;
+  color: #111111;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.navLogo { height: 65px; width: auto; object-fit: contain; }
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #111111;
+}
+
+.navLinks a { color: #111111; }
+
+.cartWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 8rem auto;
+  padding: 0 2rem;
+  color: #111111;
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 1rem;
+}
+
+.cartHeader h1 {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-transform: none;
+}
+
+.backLink {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111111;
+  text-decoration: none;
+}
+
+.backLink:hover { color: #006B3F; }
+
+.emptyCart { text-align: center; padding: 4rem 0; }
+.emptyCart p { font-family: var(--font-playfair), serif; font-size: 1.2rem; color: #666666; margin-bottom: 2rem; }
+
+.continueShoppingBtn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.cartList { display: flex; flex-direction: column; gap: 2rem; }
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.itemImage { width: 100%; height: 120px; object-fit: cover; background-color: #F5F5F5; }
+
+.itemDetails h3 { font-family: var(--font-playfair), serif; font-size: 1.2rem; margin: 0 0 0.25rem 0; text-transform: none; }
+.itemSize { font-size: 0.85rem; color: #666; margin: 0 0 0.25rem 0; }
+.itemPrice { font-size: 1rem; color: #666666; margin: 0 0 1rem 0; }
+
+.quantityControls { display: flex; align-items: center; gap: 1rem; }
+
+.qtyBtn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #CCCCCC;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.15s ease;
+}
+
+.qtyBtn:hover { border-color: #111111; background-color: #111111; color: #FFFFFF; }
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: #999999;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.removeBtn:hover { color: #FF0000; }
+
+.itemTotal { font-family: var(--font-inter), sans-serif; font-weight: 600; font-size: 1.2rem; }
+
+.cartSummary { margin-top: 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
+
+.subtotal { font-family: var(--font-inter), sans-serif; font-size: 1.2rem; display: flex; gap: 2rem; }
+.subtotal span:last-child { font-weight: 700; }
+
+.checkoutBtn {
+  padding: 1.2rem 4rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.checkoutBtn:hover { background-color: #006B3F; }
+
+@media (max-width: 768px) {
+  .cartWrapper { margin-top: 6rem; }
+  .cartItem { grid-template-columns: 80px 1fr; }
+  .itemTotal { grid-column: 1 / -1; text-align: right; }
+  .cartSummary { align-items: stretch; }
+  .subtotal { justify-content: space-between; }
+  .checkoutBtn { width: 100%; }
+  .topNav { padding: 1.5rem 2rem; }
+}

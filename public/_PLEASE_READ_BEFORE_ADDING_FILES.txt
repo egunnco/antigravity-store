@@ -1,0 +1,7 @@
+Hey! 
+
+Just a quick reminder: Whenever you upload new layout examples, mockups, or product images into this folder, please add "AntiGravity_" to the beginning of the file name (Example: AntiGravity_newdesign.png). 
+
+This will ensure your files are permanently preserved and never accidentally deleted!
+
+- Your AI Assistant
