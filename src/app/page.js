@@ -40,10 +40,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Editorial Banner */}
-      <section className={styles.editorialBanner}>
-        <img src="/Claude_vibe_river_ringer.png" alt="ArkanHOG lifestyle" className={styles.fullBleedImage} />
-      </section>
 
       {/* Product Collection */}
       <section id="services" className={styles.collectionSection}>
