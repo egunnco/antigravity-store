@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+}
+
+/* On the homepage, the user wanted the header to scroll away (absolute)
+   and not be sticky. We handle this via the isTransparent prop. */
+.header.transparent {
+  position: absolute;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.topBanner {
+  background-color: #fcba15;
+  height: 12px;
+  width: 100%;
+}
+
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  width: 100%;
+}
+
+/* Left: Logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Center: Nav Links mimicking the screenshot */
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navGroupTitle {
+  font-size: 0.75rem;
+  color: #888888;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+.navGroupItems {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navGroupItems a {
+  font-size: 0.9rem;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.navGroupItems a:hover {
+  color: #666666;
+}
+
+/* Adjust colors if header is transparent (homepage) */
+.header.transparent .navGroupTitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+.header.transparent .navGroupItems a,
+.header.transparent .iconButton,
+.header.transparent .textButton {
+  color: #ffffff;
+}
+
+/* Right: Controls */
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.iconButton:hover {
+  opacity: 0.7;
+}
+
+.textButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #111111;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.textButton:hover {
+  color: #666666;
+}
+
+.accountSection {
+  display: flex;
+  align-items: center;
+}
+
+.cartSection {
+  display: flex;
+  align-items: center;
+}

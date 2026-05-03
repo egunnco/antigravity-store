@@ -28,16 +28,7 @@ export default function ProductPage() {
     <main className={styles.main}>
 
       {/* Nav */}
-      <nav className={styles.topNav}>
-        <Link href="/">
-          <img src="/Claude_egunn_logo.png" alt="Elizabeth Gunn & Co." className={styles.navLogo} />
-        </Link>
-        <div className={styles.navLinks}>
-          <Link href="/about">About</Link>
-          <Link href="/#services">Shop</Link>
-          <CartNavButton color="#111111" />
-        </div>
-      </nav>
+      
 
       {/* Product Layout */}
       <div className={styles.productLayout}>

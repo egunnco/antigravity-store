@@ -13,17 +13,7 @@ export default function CartPage() {
 
   return (
     <main className={styles.main}>
-      <nav className={styles.topNav}>
-        <Link href="/">
-          <img src="/Claude_egunn_logo.png" alt="Elizabeth Gunn & Co." className={styles.navLogo} />
-        </Link>
-        <div className={styles.navLinks}>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/#services">Shop</Link>
-          <CartNavButton color="#111111" />
-        </div>
-      </nav>
+
 
       <div className={styles.cartWrapper}>
         <div className={styles.cartHeader}>

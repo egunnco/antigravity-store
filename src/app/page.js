@@ -6,22 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-      {/* Navigation */}
-      <nav className={styles.topNav}>
-        <Link href="/">
-          <img
-            src="/Claude_egunn_logo.png"
-            alt="Elizabeth Gunn & Co."
-            className={styles.navLogo}
-            style={{ transform: 'scale(1.25)', transformOrigin: 'left center' }}
-          />
-        </Link>
-        <div className={styles.navLinks}>
-          <Link href="/about">About</Link>
-          <Link href="#services">Shop</Link>
-          <CartNavButton />
-        </div>
-      </nav>
+
 
       {/* Hero */}
       <section className={styles.hero}>

@@ -19,14 +19,20 @@ export const metadata = {
   description: "Official home of The ArkanHOG® and premium custom apparel designed by artist Elizabeth Gunn. Fayetteville, Arkansas.",
 };
 
+import { ClerkProvider } from "@clerk/nextjs";
+import Header from "../components/Header";
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>
-        <CartProvider>
-          {children}
-        </CartProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+        <body>
+          <CartProvider>
+            <Header />
+            {children}
+          </CartProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
