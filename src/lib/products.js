@@ -3,6 +3,7 @@ export const products = [
     id: 'red-ringer',
     name: 'Red Ringer T-Shirt (Women)',
     category: ['women'],
+    tags: ['vintage', 'tailgate', 'hog', 'game day'],
     price: 40.00,
     image: '/Product-Red Ringer-ArkanHOG_Antigravity.png',
     description: `The vintage-inspired, ArkanHOG® Ringer Tee you'll keep reaching for — effortless, flattering, and full of personality. With its classic ringer trim and relaxed unfinished hem, it has that perfectly worn-in feel from day one.\n* Retro red ringer neckline and sleeve trim for a timeless throwback look\n* Soft cotton-tee, relaxed fit, hits at hip\n* Unfinished bottom edge gives an easy, lived-in vibe\n* Made with sustainably sourced, US-grown 100% ring-spun cotton\n\nCare: Cold wash, hang dry, do not bleach, do not iron decoration.`,
@@ -63,12 +64,19 @@ export function searchProducts(query) {
   if (!query) return [];
   const lowercaseQuery = query.toLowerCase();
   return products.filter(p => {
+    // Check categories
     const categoryMatch = Array.isArray(p.category) 
       ? p.category.some(c => c.toLowerCase().includes(lowercaseQuery))
-      : p.category.toLowerCase().includes(lowercaseQuery);
+      : p.category?.toLowerCase().includes(lowercaseQuery);
+      
+    // Check hidden tags
+    const tagsMatch = Array.isArray(p.tags)
+      ? p.tags.some(t => t.toLowerCase().includes(lowercaseQuery))
+      : false;
       
     return p.name.toLowerCase().includes(lowercaseQuery) || 
            p.description.toLowerCase().includes(lowercaseQuery) ||
-           categoryMatch;
+           categoryMatch ||
+           tagsMatch;
   });
 }
