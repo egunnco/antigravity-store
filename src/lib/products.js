@@ -4,7 +4,7 @@ export const products = [
     name: 'Red Ringer T-Shirt (Women)',
     category: ['women'],
     price: 40.00,
-    image: '/Claude_product_red_ringer.png',
+    image: '/Product-Red Ringer-ArkanHOG_Antigravity.png',
     description: `The vintage-inspired, ArkanHOG® Ringer Tee you'll keep reaching for — effortless, flattering, and full of personality. With its classic ringer trim and relaxed unfinished hem, it has that perfectly worn-in feel from day one.\n* Retro red ringer neckline and sleeve trim for a timeless throwback look\n* Soft cotton-tee, relaxed fit, hits at hip\n* Unfinished bottom edge gives an easy, lived-in vibe\n* Made with sustainably sourced, US-grown 100% ring-spun cotton\n\nCare: Cold wash, hang dry, do not bleach, do not iron decoration.`,
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
   },
@@ -13,7 +13,7 @@ export const products = [
     name: 'Cowboy — Little Rock',
     category: ['men', 'women', 'unisex'],
     price: 48.00,
-    image: '/Claude_product_cowboy_littlerock.png',
+    image: '/PRODUCT_COWBOY-LITTLE ROCK_Antigravity.png',
     description: `The T-shirt you'll reach for all year long — soft, timeless, and made to get even better with wear.\n* Garment-dyed for a vintage-washed softness\n* Made with sustainably sourced, US-grown 100% ring-spun cotton\n* Comfortable, durable, and ready for every season\n\nCare: Cold wash, hang dry, do not bleach, do not iron decoration.`,
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
   },
@@ -22,8 +22,17 @@ export const products = [
     name: 'Cowboy — Fayetteville',
     category: ['men', 'women', 'unisex'],
     price: 48.00,
-    image: '/Claude_product_cowboy_fayetteville.png',
+    image: '/PRODUCT_COWBOY-FAYETTEVILLE_Antigravity.png',
     description: `The T-shirt you'll reach for all year long — soft, timeless, and made to get even better with wear.\n* Garment-dyed for a vintage-washed softness\n* Made with sustainably sourced, US-grown 100% ring-spun cotton\n* Comfortable, durable, and ready for every season\n\nCare: Cold wash, hang dry, do not bleach, do not iron decoration.`,
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+  },
+  {
+    id: 'boxy-tee',
+    name: 'Plain White Boxy Tee (Unisex)',
+    category: ['men', 'women', 'unisex'],
+    price: 42.00,
+    image: '/PRODUCT_Plain White Boxy Tee_Unisex_Antigravity.png',
+    description: `Your new favorite everyday essential. This boxy tee features a relaxed, vintage-inspired drop shoulder fit.\n* Ultra-soft cotton blend\n* Relaxed, unisex fit perfect for pairing with denim or lounging\n* Minimalist design for maximum versatility\n\nCare: Cold wash, hang dry for best results.`,
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
   },
   {
