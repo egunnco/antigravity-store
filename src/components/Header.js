@@ -49,6 +49,7 @@ export default function Header() {
           <div className={styles.navGroup}>
             <span className={styles.navGroupTitle}>shop</span>
             <div className={styles.navGroupItems}>
+              <Link href="/">home</Link>
               <Link href="/shop/women">women</Link>
               <Link href="/shop/men">men</Link>
               <Link href="/shop/kids">kids</Link>
