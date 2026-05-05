@@ -9,13 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@clerk/nextjs": "latest",
-    "next": "16.2.1",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "@clerk/nextjs": "^5.0.0",
+    "next": "14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "eslint": "^9",
-    "eslint-config-next": "16.2.1"
+    "eslint-config-next": "14.2.15"
   }
 }
