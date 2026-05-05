@@ -63,24 +63,29 @@ export function getProductsByCategory(category) {
 export function searchProducts(query) {
   if (!query) return [];
   
-  // Split the search query into individual words (e.g. "red vintage shirt" -> ["red", "vintage", "shirt"])
+  // Split the search query into individual words
   const searchTerms = query.toLowerCase().split(' ').filter(term => term.trim() !== '');
 
   return products.filter(p => {
     // For a product to show up, it must match EVERY word the user typed
     return searchTerms.every(term => {
-      const nameMatch = p.name.toLowerCase().includes(term);
-      const descMatch = p.description.toLowerCase().includes(term);
+      // Create a "base term" to handle plurals (e.g., "womens" -> "women", "shirts" -> "shirt")
+      // If the word ends in 's', we chop it off so we search for the root word.
+      // Since we use .includes(), "women" will still match "womens" perfectly!
+      const baseTerm = term.endsWith('s') ? term.slice(0, -1) : term;
+
+      const nameMatch = p.name.toLowerCase().includes(baseTerm);
+      const descMatch = p.description.toLowerCase().includes(baseTerm);
       
       const categoryMatch = Array.isArray(p.category) 
-        ? p.category.some(c => c.toLowerCase().includes(term))
-        : p.category?.toLowerCase().includes(term);
+        ? p.category.some(c => c.toLowerCase().includes(baseTerm))
+        : p.category?.toLowerCase().includes(baseTerm);
         
       const tagsMatch = Array.isArray(p.tags)
-        ? p.tags.some(t => t.toLowerCase().includes(term))
+        ? p.tags.some(t => t.toLowerCase().includes(baseTerm))
         : false;
         
-      // As long as the search word is found ANYWHERE on the product, it's a match for that word
+      // As long as the base word is found ANYWHERE on the product, it's a match
       return nameMatch || descMatch || categoryMatch || tagsMatch;
     });
   });
