@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useCart } from '../../components/CartProvider';
 import styles from './cart.module.css';
 import homeStyles from '../home.module.css';
-import CartNavButton from '../../components/CartNavButton';
 
 export default function CartPage() {
   const { cartItems, updateQuantity, removeFromCart, cartTotal, isLoaded } = useCart();

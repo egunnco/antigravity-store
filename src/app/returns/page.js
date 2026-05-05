@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import homeStyles from '../home.module.css';
-import CartNavButton from '../../components/CartNavButton';
 
 export default function ReturnsPage() {
   return (

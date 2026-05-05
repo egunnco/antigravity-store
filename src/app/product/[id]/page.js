@@ -5,7 +5,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { getProductById } from '../../../lib/products';
 import AddToCartButton from '../../../components/AddToCartButton';
-import CartNavButton from '../../../components/CartNavButton';
 import styles from './product.module.css';
 
 export default function ProductPage() {

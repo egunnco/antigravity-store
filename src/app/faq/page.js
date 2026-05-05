@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import homeStyles from '../home.module.css';
-import CartNavButton from '../../components/CartNavButton';
 
 const faqs = [
   { q: 'Where are your products made?', a: 'All ArkanHOG® products are designed by artist Elizabeth Gunn in Fayetteville, Arkansas. We use US-grown ring-spun cotton and premium blanks for all apparel.' },
