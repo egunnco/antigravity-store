@@ -104,9 +104,9 @@ export default function Header() {
           {/* Account Login / Profile */}
           <div className={styles.accountSection}>
             {isLoaded && !isSignedIn && (
-              <SignInButton mode="modal">
-                <button className={styles.textButton}>login</button>
-              </SignInButton>
+              <Link href="/sign-in" className={styles.textButton}>
+                login
+              </Link>
             )}
             {isLoaded && isSignedIn && (
               <UserButton afterSignOutUrl="/" />
