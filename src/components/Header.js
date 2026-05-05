@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 import CartNavButton from './CartNavButton';
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
 
 export default function Header() {
   const pathname = usePathname();
   const isTransparent = pathname === '/';
+
+  const { isLoaded, isSignedIn } = useAuth();
 
   return (
     <header className={`${styles.header} ${isTransparent ? styles.transparent : ''}`}>
@@ -61,14 +63,14 @@ export default function Header() {
 
           {/* Account Login / Profile */}
           <div className={styles.accountSection}>
-            <SignedOut>
+            {isLoaded && !isSignedIn && (
               <SignInButton mode="modal">
                 <button className={styles.textButton}>login</button>
               </SignInButton>
-            </SignedOut>
-            <SignedIn>
+            )}
+            {isLoaded && isSignedIn && (
               <UserButton afterSignOutUrl="/" />
-            </SignedIn>
+            )}
           </div>
 
           {/* Cart */}
