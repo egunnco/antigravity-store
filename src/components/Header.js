@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 import CartNavButton from './CartNavButton';
-import { SignInButton, Show, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
   const pathname = usePathname();
@@ -61,14 +61,14 @@ export default function Header() {
 
           {/* Account Login / Profile */}
           <div className={styles.accountSection}>
-            <Show when="signed-out">
+            <SignedOut>
               <SignInButton mode="modal">
                 <button className={styles.textButton}>login</button>
               </SignInButton>
-            </Show>
-            <Show when="signed-in">
+            </SignedOut>
+            <SignedIn>
               <UserButton afterSignOutUrl="/" />
-            </Show>
+            </SignedIn>
           </div>
 
           {/* Cart */}
