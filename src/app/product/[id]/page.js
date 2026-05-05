@@ -16,7 +16,7 @@ export default function ProductPage() {
     return (
       <main style={{ padding: '10rem 4rem', textAlign: 'center' }}>
         <h1>Product not found</h1>
-        <Link href="/#services">← Back to Shop</Link>
+        <Link href="/">← Back to Shop</Link>
       </main>
     );
   }
@@ -40,7 +40,7 @@ export default function ProductPage() {
         {/* Details */}
         <div className={styles.detailsPanel}>
           <p className={styles.breadcrumb}>
-            <Link href="/#services">Shop</Link> / {product.name}
+            <Link href="/">Shop</Link> / {product.name}
           </p>
           <h1 className={styles.productName}>{product.name}</h1>
           <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
@@ -73,7 +73,7 @@ export default function ProductPage() {
             className={styles.addToCartBtn}
           />
 
-          <Link href="/#services" className={styles.backLink}>← Continue Shopping</Link>
+          <Link href="/" className={styles.backLink}>← Continue Shopping</Link>
 
           {/* Description */}
           <div className={styles.descriptionSection}>
