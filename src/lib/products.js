@@ -62,21 +62,26 @@ export function getProductsByCategory(category) {
 
 export function searchProducts(query) {
   if (!query) return [];
-  const lowercaseQuery = query.toLowerCase();
+  
+  // Split the search query into individual words (e.g. "red vintage shirt" -> ["red", "vintage", "shirt"])
+  const searchTerms = query.toLowerCase().split(' ').filter(term => term.trim() !== '');
+
   return products.filter(p => {
-    // Check categories
-    const categoryMatch = Array.isArray(p.category) 
-      ? p.category.some(c => c.toLowerCase().includes(lowercaseQuery))
-      : p.category?.toLowerCase().includes(lowercaseQuery);
+    // For a product to show up, it must match EVERY word the user typed
+    return searchTerms.every(term => {
+      const nameMatch = p.name.toLowerCase().includes(term);
+      const descMatch = p.description.toLowerCase().includes(term);
       
-    // Check hidden tags
-    const tagsMatch = Array.isArray(p.tags)
-      ? p.tags.some(t => t.toLowerCase().includes(lowercaseQuery))
-      : false;
-      
-    return p.name.toLowerCase().includes(lowercaseQuery) || 
-           p.description.toLowerCase().includes(lowercaseQuery) ||
-           categoryMatch ||
-           tagsMatch;
+      const categoryMatch = Array.isArray(p.category) 
+        ? p.category.some(c => c.toLowerCase().includes(term))
+        : p.category?.toLowerCase().includes(term);
+        
+      const tagsMatch = Array.isArray(p.tags)
+        ? p.tags.some(t => t.toLowerCase().includes(term))
+        : false;
+        
+      // As long as the search word is found ANYWHERE on the product, it's a match for that word
+      return nameMatch || descMatch || categoryMatch || tagsMatch;
+    });
   });
 }
